@@ -13,3 +13,26 @@ def bubble_sort(arr)
 	  return arr
 end
 	p bubble_sort([12,56,28,5,1100,6])
+
+
+	def bubble_sort_by(array)
+		unsorted = true
+		while unsorted
+		  i = 0
+		  unsorted = false
+		  while i < (array.length - 1)
+			if (yield(array[i], array[i + 1])).to_i >= 0
+			  array[i], array[i + 1] = array[i + 1], array[i]
+			  unsorted = true
+			end
+			i += 1
+		  end
+		end
+	   return array
+	  end
+	  
+	  x = bubble_sort_by(["hi","hello","hey"]) do |left,right|
+		left.length - right.length
+	  end
+	  
+	  p x	
