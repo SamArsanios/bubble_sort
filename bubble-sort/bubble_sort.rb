@@ -1,3 +1,5 @@
+!/usr/bin/env ruby
+# gem install bundler
 def bubble_sort(arr)
   len = arr.length
   swap = true
